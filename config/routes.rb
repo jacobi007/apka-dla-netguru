@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'categories#index'
+  root 'products#index'
 end
