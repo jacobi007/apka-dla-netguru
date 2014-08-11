@@ -9,4 +9,12 @@
     = javascript_include_tag 'application'
 
   %body
-    = yield
+    = render 'layouts/navbar'
+    .container
+      .row
+        = render 'layouts/intro'
+        .col-sm-8
+          = yield
+        .col-sm-4
+          = render 'layouts/categories'
+    = render 'layouts/footer'

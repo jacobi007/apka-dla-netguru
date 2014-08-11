@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  expose(:categories)
 
   decent_configuration do
     strategy DecentExposure::StrongParametersStrategy

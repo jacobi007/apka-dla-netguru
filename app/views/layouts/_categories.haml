@@ -1,0 +1,13 @@
+%h1
+  .text-center
+    %span.label.label-danger
+      Categories
+  %hr
+  .row
+    .col-sm-8.col-sm-offset-3
+      %ul.list-unstyled
+        - categories.each do |category|
+          %li
+            %h3
+              %span.badge= category.products.count
+              = category.name

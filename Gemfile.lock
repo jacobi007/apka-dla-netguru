@@ -28,8 +28,10 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    autoprefixer-rails (2.2.0.20140804)
+      execjs
     bcrypt (3.1.7)
-    bootstrap-sass (3.1.1.1)
+    bootstrap-sass (3.2.0.1)
       sass (~> 3.2)
     builder (3.2.2)
     carrierwave (0.10.0)
@@ -68,6 +70,8 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    faker (1.4.2)
+      i18n (~> 0.5)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -170,12 +174,16 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    will_paginate (3.0.7)
+    will_paginate-bootstrap (1.0.1)
+      will_paginate (>= 3.0.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 3.1.1)
+  autoprefixer-rails
+  bootstrap-sass (~> 3.2.0)
   carrierwave
   coffee-rails
   database_cleaner
@@ -184,6 +192,7 @@ DEPENDENCIES
   devise
   draper
   factory_girl_rails
+  faker
   haml-rails
   jquery-rails
   pg
@@ -191,10 +200,12 @@ DEPENDENCIES
   rails (~> 4.1.1)
   rmagick
   rspec-rails
-  sass-rails
+  sass-rails (>= 3.2)
   shoulda-matchers
   simple_enum
   simple_form
   spring
   therubyracer
   uglifier
+  will_paginate (~> 3.0)
+  will_paginate-bootstrap

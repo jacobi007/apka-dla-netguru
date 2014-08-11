@@ -2,6 +2,10 @@ class ReviewsController < ApplicationController
 
   expose(:review)
   expose(:product)
+  expose(:reviews)
+  def index
+    self.reviews = Review.paginate(:page => params[:page], :per_page => 10)
+  end
 
   def edit
   end
