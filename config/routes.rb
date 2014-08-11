@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   end
   get 'products/' => 'products#index'
   get 'reviews/:id' => 'reviews#show', as: :reviews
-
+  resources :reviews, only: [:index]
   root 'reviews#index'
 end
