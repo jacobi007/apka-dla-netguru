@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :reviews, only: [:index, :show]
+  resources :reviews, only: [:index]
   resources :categories do
     resources :products do
       resources :reviews
@@ -9,5 +9,4 @@ Rails.application.routes.draw do
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'signup' }
 
   root 'reviews#index'
-
 end

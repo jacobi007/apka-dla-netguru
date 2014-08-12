@@ -1,17 +1,22 @@
-%p#notice= notice
+%h2
+  Products in the
+  %span.label.label-warning
+    = category.name
+  &nbsp;category
+%hr
 
-%p
-  %b Name:
-  = category.name
-
-%p
+%ol
   - category.products.each do |product|
-    = product.title
+    %li
+      %h4= product.title
+%br
 
-%p
-  %h3 New product
-  = render 'products/form'
+.col-sm-8
+  .panel.panel-warning
+    .panel-heading Add new product
+    .panel-body
+      = render 'products/form'
 
-= link_to 'Edit', edit_category_path(category)
-\|
-= link_to 'Back', categories_path
+
+  =link_to 'Edit Category', edit_category_path(category), class: 'btn btn-warning'
+  =link_to 'Back', categories_path, class: 'btn btn-info'

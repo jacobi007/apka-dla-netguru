@@ -11,9 +11,9 @@
       %th Reviews
       %th Description
       %th Price
-      %th
-      %th
-      %th
+      -# %th
+      -# %th
+      -# %th
 
     - products.each do |product|
       %tr
@@ -22,10 +22,10 @@
         %td= product.reviews.count
         %td= truncate(product.description, length: 100)
         %td= product.price
-        %td= link_to 'Show', category_product_path(product.category, product)
-        %td= link_to 'Edit', edit_category_product_path(product.category, product)
-        %td= link_to 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' }
-  = link_to 'New Category', new_category_path, class: 'btn btn-success'
+        -# %td= link_to 'Show', category_product_path(product.category, product)
+        -# %td= link_to 'Edit', edit_category_product_path(product.category, product)
+        -# %td= link_to 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' }
+  = link_to 'New Product', new_category_path, class: 'btn btn-success'
   = link_to 'Back', root_url, class: 'btn btn-info'
 .col-sm-offset-7
   = will_paginate products, renderer: BootstrapPagination::Rails

@@ -1,26 +1,29 @@
-%p#notice= notice
-%p#error= flash[:error]
+.col-sm-8.col-sm-offset-4
+  %h1.text-center
+    %span.label.label-success
+      = product.title
+  %hr
+  %dl.dl-horizontal.col-sm-offset-2
+    %dt Description:
+    %dd= product.description
 
-%p
-  %b Title:
-  = product.title
-%p
-  %b Description:
-  = product.description
-%p
-  %b Price:
-  = product.price
+    %dt Price:
+    %dd= product.price
 
-%p
-  %b Category
-  = product.category.name
+    %dt Category
+    %dd= product.category.name
 
-%p
-  %b Reviews
-  = render 'reviews/form'
+    %dt Average Rating
+    %dd= product.average_rating
 
-= render reviews
+  %hr
+  .panel.panel-info
+    .panel-heading Add a review!
+    .panel-body
+      = render 'reviews/form'
+  = render reviews
 
-= link_to 'Edit', edit_category_product_path(category.id, product.id)
-\|
-= link_to 'Back', category_products_path
+
+  = link_to 'Edit', edit_category_product_path(category.id, product.id), class: 'btn btn-success'
+  = link_to 'Back', category_products_path, class: 'btn btn-info'
+  %hr

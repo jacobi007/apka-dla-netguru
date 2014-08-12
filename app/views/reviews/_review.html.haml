@@ -1,4 +1,14 @@
-%p= review.content
-%p
-  %b= review.rating
-  %em= review.author
+.media
+  .media-body
+    %h4.media-heading
+      On
+      %em= review.created_at.strftime('%b %e, %k:%M')
+      %b= review.author
+      said:
+    %p= review.content
+    %h5
+      %b= review.firstname
+      rated this product with
+      %b= review.rating
+      stars
+%hr

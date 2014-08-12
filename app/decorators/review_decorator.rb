@@ -5,4 +5,8 @@ class ReviewDecorator < Draper::Decorator
     model.user.firstname + ' ' + model.user.lastname
   end
 
+  def firstname
+    model.user.firstname
+  end
+
 end

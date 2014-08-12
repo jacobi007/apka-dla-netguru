@@ -1,3 +1,4 @@
+
 = simple_form_for [category, product, review] do |f|
   - if review.errors.any?
     #error_explanation
@@ -7,8 +8,8 @@
           %li= msg
   .field
     = f.label :content
-    = f.text_area :content
+    = f.text_area :content, cols: 30, rows: 5
   .field
     = f.input :rating, collection: 1..5
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: 'btn btn-info'

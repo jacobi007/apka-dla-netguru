@@ -17,7 +17,7 @@ describe CategoriesController do
 
   context 'user is not an admin' do
     # I changed the expected path after redirect_to in the four of the following actions
-    # in order to provide better feedback to the users, since Devise was automatically
+    # in order to provide better feedback to the users. Devise was automatically
     # redirecting to the root whenever logged user attempted the log in form and as
     # a result the flash was not being displayed.
     before do

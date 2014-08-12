@@ -4,3 +4,6 @@
 -if notice
   .alert.alert-success
     = notice
+-if flash[:info]
+  .alert.alert-info
+    = flash[:info]

@@ -8,14 +8,13 @@
   .media
   .media-body
     %h4.media-heading
-      = link_to review do
-        %strong= review.product.title
-        in
-        %em= review.product.category.name
-        ( received
-        = review.rating
-        stars) by
-        = review.user.firstname
+      %strong= review.product.title
+      in
+      %em= review.product.category.name
+      ( received
+      = review.rating
+      stars) by
+      = review.user.firstname
     = truncate(review.content, length: 150)
   %hr
 
