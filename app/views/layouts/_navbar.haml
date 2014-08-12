@@ -1,24 +1,26 @@
 %nav.navbar.navbar-default.navbar-inverse{role: "navigation"}
   .container
-    / Brand and toggle get grouped for better mobile display
     .navbar-header
       %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", type: "button"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{href: "#"} Recenzent
-    / Collect the nav links, forms, and other content for toggling
+      = link_to 'Recenzent', root_url, class: "navbar-brand"
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li.active
-          %a{href: "#"} Categories
-        %li
-          %a{href: "#"} Products
+        %li{ class: ('active' if params[:controller] == "categories") }
+          = link_to "Categories", categories_path
+        %li{ class: ('active' if params[:controller] == "products") }
+          = link_to "Products", products_path
       %ul.nav.navbar-nav.navbar-right
-        %li
-          %a{href: "#"} Sign in
-        %li
-          %a{href: "#"} Sign up
-    / /.navbar-collapse
-  / /.container-fluid
+        - if user_signed_in?
+          %li
+            = link_to "Signed as #{current_user.email}", root_url
+          %li
+            = link_to "Log out", destroy_user_session_path, method: :delete
+        - else
+          %li
+            = link_to 'Sign in', new_user_session_path
+          %li
+            = link_to 'Sign up', new_user_registration_path

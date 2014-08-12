@@ -1,21 +1,31 @@
-%h1 Listing products
+.col-sm-12.col-sm-offset-3
+  %h2.text-center
+    %span.label.label-success
+      Listing products
 
-%table
-  %tr
-    %th Title
-    %th Description
-    %th Price
-    %th
-    %th
-    %th
-
-  - products.each do |product|
+  %br
+  %table.table.table-striped
     %tr
-      %td= product.title
-      %td= product.description
-      %td= product.price
-      %td= link_to 'Show', category_product_path(product.category, product)
-      %td= link_to 'Edit', edit_category_product_path(product.category, product)
-      %td= link_to 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' }
+      %th Title
+      %th Category
+      %th Reviews
+      %th Description
+      %th Price
+      %th
+      %th
+      %th
 
-%br
+    - products.each do |product|
+      %tr
+        %td= product.title
+        %td= product.category.name
+        %td= product.reviews.count
+        %td= truncate(product.description, length: 100)
+        %td= product.price
+        %td= link_to 'Show', category_product_path(product.category, product)
+        %td= link_to 'Edit', edit_category_product_path(product.category, product)
+        %td= link_to 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' }
+  = link_to 'New Category', new_category_path, class: 'btn btn-success'
+  = link_to 'Back', root_url, class: 'btn btn-info'
+.col-sm-offset-7
+  = will_paginate products, renderer: BootstrapPagination::Rails

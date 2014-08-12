@@ -47,7 +47,12 @@ class CategoriesController < ApplicationController
     end
 
     def user_admin?
-      (current_user.nil?) ? redirect_to(new_user_session_path) : (redirect_to(new_user_session_path) unless current_user.admin?)
+      if current_user.nil?
+        redirect_to new_user_session_path
+      else
+        redirect_to root_path,
+        alert: "Only admin is allowed to perform this action" unless current_user.admin?
+      end
     end
 
 end

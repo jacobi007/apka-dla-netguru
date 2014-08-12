@@ -1,12 +1,13 @@
-.jumbotron
-  %h2
-    Get involved in the
-    %strong
-      Recenzent's
-    community!
-    %small
-      %em
-        Add products and have them reviewed by others
-  %p
-    %a.btn.btn-primary.btn-lg{ role: "button" } Add product
-    %a.btn.btn-success.btn-lg{ role: "button" } Review products
+- if params[:controller] == "reviews"
+  .jumbotron
+    %h2
+      Get involved in the
+      %strong
+        Recenzent's
+      community!
+      %small
+        %em
+          Add products and have them reviewed by others
+    %p
+      = link_to "Add product", root_url , class: "btn btn-primary btn-lg", role: "button"
+      = link_to "Review products", root_url , class: "btn btn-success btn-lg", role: "button"

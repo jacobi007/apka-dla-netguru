@@ -1,19 +1,25 @@
-%h1 Listing categories
-
-%table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
-
-  - categories.each do |category|
+.col-sm-12.col-sm-offset-3
+  %h2.text-center
+    %span.label.label-warning
+      Listing categories
+  %br
+  %table.table.table-striped
     %tr
-      %td= category.name
-      %td= link_to 'Show', category
-      %td= link_to 'Edit', edit_category_path(category)
-      %td= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
+      %th Name
+      %th Total products
+      %th
+      %th
+      %th
 
-%br
+    - categories.each do |category|
+      %tr
+        %td= category.name
+        %td= category.products.count
+        %td= link_to 'Show', category
+        %td= link_to 'Edit', edit_category_path(category)
+        %td= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
 
-= link_to 'New Category', new_category_path
+  %br
+
+  = link_to 'New Category', new_category_path, class: 'btn btn-warning'
+  = link_to 'Back', root_url, class: 'btn btn-info'

@@ -8,7 +8,7 @@
   .media
   .media-body
     %h4.media-heading
-      = link_to reviews_path(review) do
+      = link_to review do
         %strong= review.product.title
         in
         %em= review.product.category.name
