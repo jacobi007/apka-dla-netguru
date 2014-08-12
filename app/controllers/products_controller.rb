@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-#  before_action :authorize_user!, only: [:create, :update]
+  before_action :authenticate_user!, only: [:create, :update]
   before_action :authorize_products_user, only: [:update,:edit]
 
 
@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   expose_decorated(:reviews, ancestor: :product)
 
   def index
-    self.products = Product.paginate(:page => params[:page], :per_page => 10)
+    self.products = Product.paginate(:page => params[:page], :per_page => 12)
   end
 
   def show

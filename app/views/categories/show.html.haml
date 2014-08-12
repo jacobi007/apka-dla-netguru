@@ -8,7 +8,8 @@
 %ol
   - category.products.each do |product|
     %li
-      %h4= product.title
+      %h4
+        =link_to product.title, category_product_path(product.category.id, product.id)
 %br
 
 .col-sm-8
