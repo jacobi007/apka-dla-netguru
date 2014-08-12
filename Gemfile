@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 gem 'rails', '~> 4.1.1'
 
 gem 'pg'
@@ -29,6 +28,7 @@ group :development, :test do
   gem 'pry'
 end
 
+gem 'rails_12factor', group: :production
 group :test do
   gem 'database_cleaner'
 end
