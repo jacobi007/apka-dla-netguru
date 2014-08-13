@@ -1,4 +1,8 @@
-.col-sm-offset-6
-  = render 'form'
+.col-sm-offset-5
+  %h3
+    Add new category or choose form the
+    =link_to 'list', categories_path
+  .col-sm-offset-2
+    = render 'form'
 
-  = link_to 'Back', categories_path
+    = link_to 'Back', categories_path, class: 'btn btn-info'
