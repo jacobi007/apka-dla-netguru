@@ -1,7 +1,7 @@
 # Workshops application
 
 Hi! Here it is - the app for Netguru's Workshop which will take place in Poznan on 23-24 August.
-I had a lot of fun trying to complete each task and I really hope you're gonna my app at least some love :P
+I had a lot of fun trying to complete each task and I really hope you're gonna give my app at least some love :P
 
 Feel free to check it out online http://limitless-wave-3804.herokuapp.com/
 
